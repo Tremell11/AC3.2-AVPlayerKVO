@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  KVOViewController.swift
 //  AVPlayerKVO
 //
-//  Created by Jason Gresh on 1/25/17.
+//  Created by Tyler Newton on 1/25/17.
 //  Copyright © 2017 C4Q. All rights reserved.
 //
 
@@ -11,14 +11,38 @@ import AVFoundation
 
 private var kvoContext = 0
 
-class ViewController: UIViewController {
+class KVOViewController: UIViewController {
+    
+    //MARK: Properties
     var player: AVPlayer!
+    let maxValue = 2
+    let minValue = 0.25
+    var userPlaying: Bool
     
     @IBOutlet weak var videoContainer: UIView!
     @IBOutlet weak var positionSlider: UISlider!
+    @IBOutlet weak var rateSlider: UISlider!
+    @IBOutlet weak var pauseButton: UIButton!
+    
+    //MARK: Labels
+    
+    @IBOutlet weak var positionLabel: UILabel!
+    @IBOutlet weak var rateLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        positionSlider.value = 0
+        positionSlider.maximumValue = Float(maxValue)
+        rateSlider.value = 0
+        rateSlider.maximumValue = Float(maxValue)
+        rateSlider.minimumValue = Float(minValue)
+        
+        
+        positionLabel.text = "Set Position:"
+        rateLabel.text = "Set Rate:"
+        
+        
         if let url = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8") {
             let playerItem = AVPlayerItem(url: url)
             
@@ -71,12 +95,38 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
     @IBAction func positionSliderChanged(_ sender: UISlider) {
         guard let item = player.currentItem else { return }
-
+        
         let newPosition = Double(sender.value) * item.duration.seconds
         
         player.seek(to: CMTime(seconds: newPosition, preferredTimescale: 1000))
     }
+    
+    @IBAction func rateChanged(_ sender: UISlider) {
+        
+        player.playImmediately(atRate: rateSlider.value)
+        
+        guard let item = player.currentItem else { return }
+        if item.canPlayFastForward {
+            print("I can fast forward.rate requested: \(sender.value).")
+        }
+        if item.canPlaySlowForward {
+            print("I can slow forward.")
+        }
+    }
+    @IBAction func pauseButtonPressed(_ sender: UIButton) {
+        
+        if userPlaying?><m {
+            player.play()
+            player.playImmediately(atRate: rateSlider.value)
+            sender.setTitle("Pause", for: .normal)
+        }
+        else {
+            player.pause()
+            sender.setTitle("Play", for: .normal)
+        }
+        
+    }
 }
-

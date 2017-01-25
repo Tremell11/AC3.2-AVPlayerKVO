@@ -8,22 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1E5CB3A91E390D37004423CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CB3A81E390D37004423CA /* AppDelegate.swift */; };
-		1E5CB3AB1E390D37004423CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CB3AA1E390D37004423CA /* ViewController.swift */; };
 		1E5CB3AE1E390D37004423CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CB3AC1E390D37004423CA /* Main.storyboard */; };
 		1E5CB3B01E390D37004423CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CB3AF1E390D37004423CA /* Assets.xcassets */; };
 		1E5CB3B31E390D37004423CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CB3B11E390D37004423CA /* LaunchScreen.storyboard */; };
 		1E5CB3BB1E393F0C004423CA /* debussy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1E5CB3BA1E393F0C004423CA /* debussy.mp3 */; };
+		62A80AEC1E3944DC000109E2 /* KVOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A80AEB1E3944DC000109E2 /* KVOViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E5CB3A51E390D37004423CA /* AVPlayerKVO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPlayerKVO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E5CB3A81E390D37004423CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1E5CB3AA1E390D37004423CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1E5CB3AD1E390D37004423CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1E5CB3AF1E390D37004423CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E5CB3B21E390D37004423CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E5CB3B41E390D37004423CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E5CB3BA1E393F0C004423CA /* debussy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = debussy.mp3; sourceTree = "<group>"; };
+		62A80AEB1E3944DC000109E2 /* KVOViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +58,7 @@
 			children = (
 				1E5CB3BA1E393F0C004423CA /* debussy.mp3 */,
 				1E5CB3A81E390D37004423CA /* AppDelegate.swift */,
-				1E5CB3AA1E390D37004423CA /* ViewController.swift */,
+				62A80AEB1E3944DC000109E2 /* KVOViewController.swift */,
 				1E5CB3AC1E390D37004423CA /* Main.storyboard */,
 				1E5CB3AF1E390D37004423CA /* Assets.xcassets */,
 				1E5CB3B11E390D37004423CA /* LaunchScreen.storyboard */,
@@ -140,8 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E5CB3AB1E390D37004423CA /* ViewController.swift in Sources */,
 				1E5CB3A91E390D37004423CA /* AppDelegate.swift in Sources */,
+				62A80AEC1E3944DC000109E2 /* KVOViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +303,7 @@
 				1E5CB3B91E390D37004423CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
