@@ -15,11 +15,17 @@ class KVOViewController: UIViewController {
     
     //MARK: Properties
     var player: AVPlayer!
+<<<<<<< HEAD:AVPlayerKVO/KVOViewController.swift
     let maxValue = 2
     let minValue = 0.25
     var userPlaying: Bool
+=======
+    var userPlayRate: Float = 1.0
+    var userPlaying: Bool = false
+>>>>>>> f53410a6f19d8519dff5d73c43c4c8cae40b99e2:AVPlayerKVO/ViewController.swift
     
     @IBOutlet weak var videoContainer: UIView!
+    @IBOutlet weak var playPauseButton: UIButton!
     @IBOutlet weak var positionSlider: UISlider!
     @IBOutlet weak var rateSlider: UISlider!
     @IBOutlet weak var pauseButton: UIButton!
@@ -88,7 +94,7 @@ class KVOViewController: UIViewController {
             if keyPath == "status",
                 let item = object as? AVPlayerItem {
                 if item.status == .readyToPlay {
-                    player.play()
+                    playPauseButton.isEnabled = true
                 }
             }
         }
@@ -104,6 +110,7 @@ class KVOViewController: UIViewController {
         player.seek(to: CMTime(seconds: newPosition, preferredTimescale: 1000))
     }
     
+<<<<<<< HEAD:AVPlayerKVO/KVOViewController.swift
     @IBAction func rateChanged(_ sender: UISlider) {
         
         player.playImmediately(atRate: rateSlider.value)
@@ -122,11 +129,43 @@ class KVOViewController: UIViewController {
             player.play()
             player.playImmediately(atRate: rateSlider.value)
             sender.setTitle("Pause", for: .normal)
+=======
+    @IBAction func rateChange(_ sender: UISlider) {
+        guard let item = player.currentItem else { return }
+        
+        userPlayRate = sender.value
+        
+        if item.canPlayFastForward {
+            print("I can fast forward. Rate requested: \(sender.value).")
+        }
+        if item.canPlaySlowForward {
+            print("I can slow forward")
+        }
+        
+        if userPlaying {
+            player.rate = userPlayRate
+        }
+        //print("NEW rate: \(player.rate).")
+
+    }
+    
+    @IBAction func playPausePressed(_ sender: UIButton) {
+        if !userPlaying {
+            player.playImmediately(atRate: userPlayRate)
+            sender.setTitle("Pause", for: .normal)
+            //userPlaying = false
+>>>>>>> f53410a6f19d8519dff5d73c43c4c8cae40b99e2:AVPlayerKVO/ViewController.swift
         }
         else {
             player.pause()
             sender.setTitle("Play", for: .normal)
+<<<<<<< HEAD:AVPlayerKVO/KVOViewController.swift
         }
         
+=======
+            //userPlaying = true
+        }
+        userPlaying = !userPlaying
+>>>>>>> f53410a6f19d8519dff5d73c43c4c8cae40b99e2:AVPlayerKVO/ViewController.swift
     }
 }

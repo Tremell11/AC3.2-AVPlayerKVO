@@ -48,6 +48,15 @@
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2e-ox-ZuL">
                                 <rect key="frame" x="166" y="305" width="42" height="21"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.25" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="cD4-Np-Xoz">
+                                <rect key="frame" x="35" y="301" width="154" height="31"/>
+                                <connections>
+                                    <action selector="rateChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="GGu-GV-77y"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9j-cV-S5e">
+                                <rect key="frame" x="37" y="276" width="35" height="21"/>
+
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -80,6 +89,28 @@
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="top" secondItem="7Jf-Ju-oOG" secondAttribute="bottom" constant="8" id="kn0-ZL-0NX"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="leading" secondItem="nVF-Hz-CEb" secondAttribute="leading" id="nAP-MJ-dTP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yZP-pO-40W" secondAttribute="trailing" constant="149" id="pNL-Zp-cHk"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E6O-cK-MpY">
+                                <rect key="frame" x="307" y="301" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playPausePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfn-Iw-k81"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="E6O-cK-MpY" firstAttribute="trailing" secondItem="nVF-Hz-CEb" secondAttribute="trailing" id="4mn-BM-dF1"/>
+                            <constraint firstItem="cD4-Np-Xoz" firstAttribute="top" secondItem="nVF-Hz-CEb" secondAttribute="bottom" constant="73" id="By4-si-Ov4"/>
+                            <constraint firstItem="cD4-Np-Xoz" firstAttribute="width" secondItem="nVF-Hz-CEb" secondAttribute="width" multiplier="0.5" id="HmT-uO-USe"/>
+                            <constraint firstItem="cD4-Np-Xoz" firstAttribute="leading" secondItem="nVF-Hz-CEb" secondAttribute="leading" id="JUl-RM-rcH"/>
+                            <constraint firstItem="nVF-Hz-CEb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="QbN-FE-ZjU"/>
+                            <constraint firstItem="1ly-M6-eNm" firstAttribute="top" secondItem="nVF-Hz-CEb" secondAttribute="bottom" constant="8" id="Xiz-rI-VtE"/>
+                            <constraint firstItem="E6O-cK-MpY" firstAttribute="bottom" secondItem="cD4-Np-Xoz" secondAttribute="bottom" id="gOM-Xh-l20"/>
+                            <constraint firstItem="1ly-M6-eNm" firstAttribute="width" secondItem="nVF-Hz-CEb" secondAttribute="width" id="hlB-1n-lBG"/>
+                            <constraint firstItem="T9j-cV-S5e" firstAttribute="leading" secondItem="cD4-Np-Xoz" secondAttribute="leading" id="mKg-y3-FrR"/>
+                            <constraint firstItem="1ly-M6-eNm" firstAttribute="leading" secondItem="nVF-Hz-CEb" secondAttribute="leading" id="nAP-MJ-dTP"/>
+                            <constraint firstItem="cD4-Np-Xoz" firstAttribute="top" secondItem="T9j-cV-S5e" secondAttribute="bottom" constant="4" id="pGc-Vt-ob4"/>
+>>>>>>> f53410a6f19d8519dff5d73c43c4c8cae40b99e2
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="pan-ac-QrX"/>
                             <constraint firstItem="usO-Ca-qM7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="114" id="qCj-Dj-Ddx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7Jf-Ju-oOG" secondAttribute="trailing" constant="149" id="rmk-tQ-JgW"/>
@@ -95,6 +126,9 @@
                         <outlet property="rateLabel" destination="y2e-ox-ZuL" id="MCj-kT-4AG"/>
                         <outlet property="rateSlider" destination="usO-Ca-qM7" id="sU8-mK-Qgb"/>
                         <outlet property="videoContainer" destination="nVF-Hz-CEb" id="6K3-gM-BMM"/>
+                        <outlet property="playPauseButton" destination="E6O-cK-MpY" id="BWm-vZ-vKW"/>
+                        <outlet property="positionSlider" destination="1ly-M6-eNm" id="0OK-18-jMa"/>
+                        <outlet property="videoContainer" destination="nVF-Hz-CEb" id="tPh-Fs-BpL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
